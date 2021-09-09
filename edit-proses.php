@@ -8,12 +8,12 @@ if(isset($_POST['simpan'])){
 	include('koneksi.php');
 	
 	//jika tombol tambah benar di klik maka lanjut prosesnya
-	$nik			= $_POST['nik'];	//membuat variabel $id dan datanya dari inputan hidden id
-	$nama			= $_POST['nama'];	//membuat variabel $nis dan datanya dari inputan NIS
-	$tanggal_lahir	= $_POST['tanggal_lahir'];	//membuat variabel $nama dan datanya dari inputan Nama Lengkap
-	$no_hp			= $_POST['no_hp'];	//membuat variabel $kelas dan datanya dari inputan dropdown Kelas
-	$jam			= $_POST['jam'];	//membuat variabel $jurusan dan datanya dari inputan dropdown Jurusan
-	$menit			= $_POST['menit'];
+	$nik			= $_POST['nik'];		//membuat variabel $nik dan datanya dari inputan hidden NIK
+	$nama			= $_POST['nama'];		//membuat variabel $nama dan datanya dari inputan nama
+	$tanggal_lahir		= $_POST['tanggal_lahir'];	//membuat variabel $tanggal_lahir dan datanya dari inputan tanggal lahir
+	$no_hp			= $_POST['no_hp'];		//membuat variabel $no_hp dan datanya dari inputan no hp
+	$jam			= $_POST['jam'];		//membuat variabel $jam dan datanya dari inputan jam
+	$menit			= $_POST['menit'];		//membuat variabel $menit dan datanya dari inputan menit
 	
 	//melakukan query dengan perintah UPDATE untuk update data ke database dengan kondisi WHERE siswa_id='$id' <- diambil dari inputan hidden id
 	$update = mysqli_query($mysqli, "UPDATE karyawan SET nama='$nama', tanggal_lahir='$tanggal_lahir', no_hp='$no_hp', jam=$jam, menit=$menit WHERE nik='$nik'") or die(mysqli_error());
