@@ -8,7 +8,7 @@
 	
 	<p><a href="index.php">Beranda</a> / <a href="tambah.php">Tambah Data</a></p>
 	
-	<h3>Data Siswa</h3>
+	<h3>Data Karyawan</h3>
 	
 	<table cellpadding="5" cellspacing="0" border="1">
 		<tr bgcolor="#CCCCCC">
@@ -26,7 +26,7 @@
 		//iclude file koneksi ke database
 		include('koneksi.php');
 		
-		//query ke database dg SELECT table siswa diurutkan berdasarkan NIS paling besar
+		//query ke database dg SELECT table karyawan diurutkan berdasarkan NIK paling besar
 		$query = mysqli_query($mysqli,"SELECT * FROM karyawan ORDER BY tanggal_lahir ASC") or die(mysqli_error());
 		
 		//cek, apakakah hasil query di atas mendapatkan hasil atau tidak (data kosong atau tidak)
